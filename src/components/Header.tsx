@@ -9,6 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link as RouterLink } from 'react-router-dom';
+import Logo from '../images/WLS.png'
 
 export default function ButtonAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -33,13 +34,33 @@ export default function ButtonAppBar() {
             onClick={handleClick}
           >
             <MenuIcon />
-          </IconButton>
-          <Typography component={RouterLink} to={'/'} variant="h6" sx={{ flexGrow: 1 }}>
-            Home
+          </IconButton>          
+          <Box sx= {{ display: 'flex',
+                      flexDirection: 'column',
+                      // justifyContent: 'space-between',
+                      // alignItems: 'middle',
+                      // width: '75%'
+                    }}>
+                <RouterLink to={'/'}>
+                  <Box
+                    component="img"
+                    sx={{
+                      height: 50,                                         
+                    }}
+                    alt="WLS Logo - Williams Lawn Seed"
+                    src={Logo}
+                  />
+                </RouterLink>
+                <Typography variant="h6">
+                   Williams Lawn Seed
+                </Typography>
+          </Box>
+          {/* <Typography variant="h6">
+            1-800-555-5555
           </Typography>
           <Button component={RouterLink} to={'/Other'} color="inherit">Other</Button>
           <Button component={RouterLink} to={'/products'} color="inherit">Products</Button>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">Login</Button> */}
         </Toolbar>
       </AppBar>
       <Menu
