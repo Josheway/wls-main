@@ -33,34 +33,56 @@ export default function ButtonAppBar() {
             sx={{ mr: 2 }}
             onClick={handleClick}
           >
-            <MenuIcon />
+            <MenuIcon sx={{ display: { xs: 'block', md: 'none' } }} />
           </IconButton>          
           <Box sx= {{ display: 'flex',
-                      flexDirection: 'column',
+                      flexDirection: { xs: 'column', sm: 'row' },
+                      margin: {sm: 'auto', md: '0'},
                       // justifyContent: 'space-between',
-                      // alignItems: 'middle',
-                      // width: '75%'
+                      alignItems: {xs: 'center', md: 'left'},
+                      width: {md: '75%'}
                     }}>
-                <RouterLink to={'/'}>
-                  <Box
-                    component="img"
-                    sx={{
-                      height: 50,                                         
-                    }}
-                    alt="WLS Logo - Williams Lawn Seed"
-                    src={Logo}
-                  />
-                </RouterLink>
-                <Typography variant="h6">
-                   Williams Lawn Seed
+                      <Box 
+                      sx={{
+                        display: 'flex', 
+                        flexDirection: 'column', 
+                        // justifyContent: 'center',
+                        alignItems: 'center',
+                        // alignContent: 'center',
+                        // width: '100%'
+                        }}>
+                        <RouterLink to={'/'}>
+                          <Box
+                            component="img"
+                            sx={{
+                              height: 50,
+                              // maxWidth: 200,
+                              marginTop: 1,
+                              // marginBottom: 10,
+                              // height: 'auto',
+                              // width: 'auto'                                   
+                            }}
+                            alt="WLS Logo - Williams Lawn Seed"
+                            src={Logo}
+                          />
+                        </RouterLink>
+                        <Typography variant="h6">
+                          Williams Lawn Seed
+                        </Typography>
+                      </Box>
+                <Typography variant="h6" sx={{
+                  marginLeft: {sm: 3}
+                }}>
+                  1-800-555-5555
                 </Typography>
           </Box>
-          {/* <Typography variant="h6">
-            1-800-555-5555
-          </Typography>
-          <Button component={RouterLink} to={'/Other'} color="inherit">Other</Button>
-          <Button component={RouterLink} to={'/products'} color="inherit">Products</Button>
-          <Button color="inherit">Login</Button> */}
+
+          <Box sx={{ display: { xs: 'none', md: 'block' }, }}>
+            <Button component={RouterLink} to={'/Other'} color="inherit">Other</Button>
+            <Button component={RouterLink} to={'/products'} color="inherit">Products</Button>
+            <Button color="inherit">Login</Button>
+          </Box>
+
         </Toolbar>
       </AppBar>
       <Menu

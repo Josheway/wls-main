@@ -1,6 +1,6 @@
 import React, { ReactElement, FC } from "react";
 import {useEffect, useState} from 'react';
-import {Card, CardContent, CardHeader, Dialog, Tab, Tabs, Typography} from '@mui/material';
+import {Box, Card, CardContent, CardHeader, Dialog, Tab, Tabs, Typography} from '@mui/material';
 
 
 
@@ -58,45 +58,58 @@ const Products: FC<Props> = ({ title }): ReactElement => {
             <div
                 // className={classes.tabContainer}
             >
-                {state.productList.map((product: any, index: any) => {
+                <Box sx={{
+                    display: 'flex', flexFlow: 'row wrap', justifyContent: 'center', maxWidth: 'lg'}}
+                >
 
-                    if (product.type === state.typeList[parseInt(state.selectedTab)]) {
-                        return (
-                            <div
-                                key={'product' + product.title}
-                                id={index}
-                                // className={classes.tabContent}
-                                onClick={handleSelect}
-                            >
-                                <Card
-                                    // className={classes.cardHeader}
+                    {state.productList.map((product: any, index: any) => {
+
+                        if (product.type === state.typeList[parseInt(state.selectedTab)]) {
+                            return (
+                                <div
+                                    key={'product' + product.title}
+                                    id={index}
+                                    // className={classes.tabContent}
+                                    onClick={handleSelect}
                                 >
-                                    <CardHeader title={product.title}/>
-                                    <CardContent>
-                                    <div
-                                            style={{
-                                                // margin: 5
-                                                textAlign: 'center'
-                                            }}
+                                    <Card 
+                                        sx={{ m: 5, 
+                                            width: 310 
+                                        }}
+                                        // className={classes.cardHeader}
+                                    >
+                                        <CardHeader title={product.title} 
+                                            sx = {{textAlign: 'center'}} 
+                                        />
+                                    
+                                        <CardContent 
+                                            // sx = {{alignContent: 'center'}}
                                         >
-                                            <img
-                                                src={product.image} 
-                                            />
-                                        </div>
-                                        <ul key={'list' + product.title}>
-                                            {product.ingredients.map((ingredient: any, i: number) => {                                                
-                                                    return (
-                                                        <li key={i}>{ingredient}</li>
-                                                    );                                                
-                                            })}
-                                        </ul>
-                                    </CardContent>
-                                </Card>
-                            </div>
-                        );
-                    }
-                    return ('');
-                })}
+                                            <div
+                                                    style={{
+                                                        // margin: 5
+                                                        textAlign: 'center'
+                                                    }}
+                                            >
+                                                    <img
+                                                        src={product.image} 
+                                                    />
+                                            </div>
+                                                    <ul key={'list' + product.title}>
+                                                        {product.ingredients.map((ingredient: any, i: number) => {                                                
+                                                                return (
+                                                                    <li key={i}>{ingredient}</li>
+                                                                );                                                
+                                                        })}
+                                                    </ul>
+                                        </CardContent>
+                                    </Card>
+                                </div>
+                            );
+                        }
+                        return ('');
+                    })}
+                </Box>
             </div>
         );
     };
@@ -105,6 +118,8 @@ const Products: FC<Props> = ({ title }): ReactElement => {
         <div 
         // className={classes.root}
         >
+            <div>{title}</div>
+            
             <Tabs
                 value={state.selectedTab}
                 onChange={handleTabChange}

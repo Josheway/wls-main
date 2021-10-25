@@ -12,15 +12,15 @@ function App() {
     
     <Router>
     
-      <Box sx={{ bgcolor: 'secondary.main', height: '100vh' }}>
+      <Box sx={{ bgcolor: 'secondary.main', height: '100%' }}>
 
         <Header />
 
-        <Header1 title="React App" />
+        {/* <Header1 title="React App" />
 
         <h1 >
               Check One, Check Check
-        </h1>
+        </h1> */}
 
         <Switch>
           <Route exact path="/">
