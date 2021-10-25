@@ -37,7 +37,7 @@ export default function ButtonAppBar() {
           </IconButton>          
           <Box sx= {{ display: 'flex',
                       flexDirection: { xs: 'column', sm: 'row' },
-                      margin: {sm: 'auto', md: '0'},
+                      margin: {xs: 'auto', md: '0'},
                       // justifyContent: 'space-between',
                       alignItems: {xs: 'center', md: 'left'},
                       width: {md: '70%'}
