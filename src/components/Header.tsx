@@ -40,7 +40,7 @@ export default function ButtonAppBar() {
                       margin: {sm: 'auto', md: '0'},
                       // justifyContent: 'space-between',
                       alignItems: {xs: 'center', md: 'left'},
-                      width: {md: '75%'}
+                      width: {md: '70%'}
                     }}>
                       <Box 
                       sx={{
@@ -71,7 +71,8 @@ export default function ButtonAppBar() {
                         </Typography>
                       </Box>
                 <Typography variant="h6" sx={{
-                  marginLeft: {sm: 3}
+                  marginLeft: {sm: 3},
+                  margin: {md: 'auto'}
                 }}>
                   1-800-555-5555
                 </Typography>
