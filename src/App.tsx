@@ -1,5 +1,4 @@
 import React from 'react';
-import Header1 from './components/Header1';
 import Header from './components/Header';
 import { Box } from '@mui/system';
 import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom';

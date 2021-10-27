@@ -92,7 +92,7 @@ const Products: FC<Props> = ({ title }): ReactElement => {
                                                     }}
                                             >
                                                     <img
-                                                        src={product.image} 
+                                                        src={product.image} alt=""
                                                     />
                                             </div>
                                                     <ul key={'list' + product.title}>
@@ -143,7 +143,7 @@ const Products: FC<Props> = ({ title }): ReactElement => {
                     // className={classes.dialogContent}
                 >
                     <div style={{marginTop: '20px'}}>
-                            <img src={state.selectedItem.image}  />
+                            <img src={state.selectedItem.image} alt='' />
                         </div>
                     <div>
                         <Typography
