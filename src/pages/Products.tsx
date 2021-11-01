@@ -10,7 +10,7 @@ import {
 
 interface Props {
 
-    title: String
+    title: string
 
 }
 

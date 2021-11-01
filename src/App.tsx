@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from './components/Header.tsx';
-import Products from './pages/Products.tsx';
-import Home from './pages/Home.tsx';
-import Other from './pages/Other.tsx';
+import Header from './components/Header';
+import Products from './pages/Products';
+import Home from './pages/Home';
+import Other from './pages/Other';
 
 function App() {
   return (

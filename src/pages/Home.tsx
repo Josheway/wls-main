@@ -4,7 +4,7 @@ import React, { ReactElement, FC } from 'react';
 
 interface Props {
 
-    title: String
+    title: string
 
 }
 
