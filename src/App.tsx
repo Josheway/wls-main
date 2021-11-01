@@ -1,16 +1,16 @@
 import React from 'react';
-import Header from './components/Header';
-import { Box } from '@mui/system';
-import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
-import Products from './pages/Products';
-import Home from './pages/Home';
-import Other from './pages/Other';
+import { Box } from '@mui/material';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Header from './components/Header.tsx';
+import Products from './pages/Products.tsx';
+import Home from './pages/Home.tsx';
+import Other from './pages/Other.tsx';
 
 function App() {
   return (
-    
+
     <Router>
-    
+
       <Box sx={{ bgcolor: 'secondary.main', height: '100%' }}>
 
         <Header />
@@ -25,19 +25,18 @@ function App() {
           <Route exact path="/">
             <Home title="Home" />
           </Route>
-                    <Route path="/other">
-                        <Other title="Other Page" />
-                    </Route>
-                    <Route path="/products">
-                        <Products title="Products" />
-                  </Route>
+          <Route path="/other">
+            <Other title="Other Page" />
+          </Route>
+          <Route path="/products">
+            <Products title="Products" />
+          </Route>
         </Switch>
 
       </Box>
 
     </Router>
 
-    
   );
 }
 

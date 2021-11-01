@@ -1,6 +1,4 @@
-import React, { ReactElement, FC } from "react";
-
-
+import React, { ReactElement, FC } from 'react';
 
 // define interface to represent component props
 
@@ -10,20 +8,14 @@ interface Props {
 
 }
 
+const Home: FC<Props> = ({ title }): ReactElement => (
 
-const Home: FC<Props> = ({ title }): ReactElement => {
+  <div>
 
-    return (
+    {title}
 
-        <div>
+  </div>
 
-            {title}
-
-        </div>
-
-    );
-
-};
-
+);
 
 export default Home;
